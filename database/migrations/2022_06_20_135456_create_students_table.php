@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('students', function (Blueprint $table) {
+        Schema::create('students', function (Blueprint $table)  {
             $table->id();
             $table->string('student_name');
             $table->bigInteger('student_age');
@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('student_email')->unique;
             $table->string('email_university')->unique;
             $table->string('student_imageUrl')->nullable();
+            $table->datetime('start_date');
             $table->timestamps();
         });
     }
